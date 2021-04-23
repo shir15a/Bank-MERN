@@ -12,15 +12,6 @@ router
   .post("/", (req, res) => {
     accountControler.create(req, res);
   })
-  .put("/transform", (req, res) => {
-    accountControler.transferMoney(req, res);
-  })
-  .put("/depositing/:id", (req, res) => {
-    accountControler.deposit(req, res);
-  })
 
 module.exports = router;
 
-
-
-// "start": "npm run build && node src/server/index.js",

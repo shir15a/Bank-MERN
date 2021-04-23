@@ -4,9 +4,11 @@ const validator = require('validator');
 const trasnaction = mongoose.model('trasnaction', {
     from: {
 		type: String,
+        required: false,
 	},
 	to: {
 		type: String,
+		required: false,
 	},
 	operation_type: {
         type: String,

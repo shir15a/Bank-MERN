@@ -1,0 +1,11 @@
+.navbar{
+    color:black;
+    font-family: 'Antonio', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 3%;
+}
+
+a:visited {
+    color:black;
+} 

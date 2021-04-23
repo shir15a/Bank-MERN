@@ -9,5 +9,9 @@ router
   .put("/depositing/:id", (req, res) => {
     accountControler.deposit(req, res);
   })
+  .put("/updateCredit/:id", (req, res) => {
+    accountControler.updateCredit(req, res);
+  })
+
 
 module.exports = router;
