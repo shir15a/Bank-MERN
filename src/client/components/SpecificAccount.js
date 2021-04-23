@@ -5,8 +5,8 @@ function SpecificAccount() {
     const [parm, setParm] = useState("");
 
     const onButtonClick = async() =>{
-        const res = await axios.get(`http://localhost:8000/api/bank/account/${parm}`)
-        console.log(res);
+        const {data} = await axios.get(`http://localhost:8000/api/bank/account/${parm}`)
+        console.log(data);
     }
 
     return (
@@ -21,3 +21,4 @@ function SpecificAccount() {
 }
 
 export default SpecificAccount
+
