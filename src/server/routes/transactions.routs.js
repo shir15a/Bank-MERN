@@ -3,7 +3,7 @@ const router = express.Router();
 const accountControler = require("../controllers/transactions.controller");
 
 router
-  .put("/transform", (req, res) => {
+  .put("/transfer", (req, res) => {
     accountControler.transferMoney(req, res);
   })
   .put("/depositing/:id", (req, res) => {
