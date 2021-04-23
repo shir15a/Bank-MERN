@@ -6,11 +6,21 @@ const Account = mongoose.model('Account', {
 		type: String,
 		required: true,
 		unique: true,
+		validate(id){
+            if(id.length !== 9 ){
+                throw new Error('Invalid ID, id length should be nine')
+            }
+        }
 	},
 	name: {
 		type: String,
 		required: true,
 		unique: false,
+		validate(name){
+            if(!name.match(/([a-zA-Z]{2,}\s[a-zA-Z]{2,})/)){
+                throw new Error('Provide full name please')
+            }
+        }
 	},
 	email: {
         type: String,
