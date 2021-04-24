@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 function getAllUsers() {
 
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
-      let {data}  = await axios.get('http://localhost:8000/api/bank/account/');
+      let { data } = await axios.get('http://localhost:8000/api/bank/account/');
       console.log(data);
       setData(data)
     }
