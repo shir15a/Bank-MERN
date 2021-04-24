@@ -8,23 +8,8 @@ function TrasnactionById() {
     const onButtonClick = async () => {
         const { data } = await axios.get(`http://localhost:8000/api/bank/transactions/${id}`)
         console.log(data);
-        setData( data )
+        setData(data)
     }
-
-    const Details = () => {
-        if (data) {
-            if (data.error) return <h2>{data.error}</h2>;
-            else
-                return (
-                    <div className="card">
-                        <h3>{`ID: ${data.from}`}</h3>
-                        <h4>{`Name: ${data.to}`}</h4>
-                        <h4>{`Cash: ${data.operation_type}`}</h4>
-                        <h4>{`Credit: ${data.amount}`}</h4>
-                    </div>
-                );
-        } else return <p></p>
-    };
 
     return (
         <div>
