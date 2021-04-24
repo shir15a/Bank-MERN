@@ -19,12 +19,13 @@ function getAllUsers() {
       {data.map((user, index) => {
         return (
           <div style={{ border: '1px solid black', marginTop: '3px', marginLeft: '3px', width: '200px' }} key={user.id} key={user._id}>
-            <p><b>user: {index + 1}</b></p>
-            <p>name: {user.name}</p>
-            <p>email: {user.email}</p>
-            <p>cash: {user.account.cash}</p>
-            <p>credit: {user.account.credit}</p>
-            <p>is active: {String(user.isActive)}</p>
+            <p><b>User: {index + 1}</b></p>
+            <p>Name: {user.name}</p>
+            <p>Id: {user.israeliId}</p>
+            <p>Email: {user.email}</p>
+            <p>Cash: {user.account.cash}</p>
+            <p>Credit: {user.account.credit}</p>
+            <p>Is active: {String(user.isActive)}</p>
           </div>
         )
       })}

@@ -8,7 +8,7 @@ function Form({type, buttonValue}) {
     const [amount, setAmount] = useState('');
 
     const onButtonClick = async()=>{
-        console.log(amount);
+        // console.log(amount);
         const result = await axios.put(`http://localhost:8000/api/bank/transactions/${type}/${id}`,{amount})
         console.log(result);
     }

@@ -7,6 +7,8 @@ import HomePage from './HomePage'
 import Deposit from './Deposit'
 import Withdraw from './Withdraw'
 import UpdateCredit from './UpdateCredit'
+import TransferMoney from './TransferMoney'
+import Create from './CreateAccount'
 
 
 export default class Bank extends Component {
@@ -22,6 +24,9 @@ export default class Bank extends Component {
                         <Route path="/Deposit" exact component={Deposit} />
                         <Route path="/Withdraw" exact component={Withdraw} />
                         <Route path="/UpdateCredit" exact component={UpdateCredit} />
+                        <Route path="/TransferMoney" exact component={TransferMoney} />
+                        <Route path="/create" exact component={Create} />
+
                     </Switch>
                 </div>
             </BrowserRouter>

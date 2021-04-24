@@ -14,6 +14,7 @@ const createAccount = (req, res) => {
         email,
     });
 
+    console.log(user, 'user');
     user.save((err) => {
         if (err) return res.status(400).json({ error: err });
         return res.status(201).json({ success: user });

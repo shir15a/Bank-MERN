@@ -12,8 +12,12 @@ const Navbar = () => {
             <Link to="/Deposit" className="link">Deposit</Link>
             <Link to="/Withdraw" className="link">Withdraw</Link>
             <Link to="/UpdateCredit" className="link">Update credit</Link>
+            <Link to="/TransferMoney" className="link">Transfer money</Link>
+            <Link to="/Create" className="link">Create new account</Link>
+
         </div>
     );
 };
+
 
 export default Navbar;

@@ -1,9 +1,11 @@
 import React from 'react'
+import Form from "./InputsForUpdateAndDeposit";
 
 function Withdraw() {
     return (
         <div>
-            Withdraw
+            <Form type="withdrawMoney" buttonValue="Withdraw" />
+
         </div>
     )
 }
