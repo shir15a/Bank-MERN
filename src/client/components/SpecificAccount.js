@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { useState } from 'react'
 
 function SpecificAccount() {
-    const [parm, setParm] = useState("");
+    const [id, setId] = useState("");
     const [data, setData] = useState("");
 
     const onButtonClick = async () => {
-        const { data } = await axios.get(`http://localhost:8000/api/bank/account/${parm}`)
+        const { data } = await axios.get(`http://localhost:8000/api/bank/account/${id}`)
         console.log(data);
         setData(data)
     }
@@ -31,9 +31,9 @@ function SpecificAccount() {
         <div>
             <input type='text'
                 placeholder='write an Id'
-                onChange={(e) => setParm(e.target.value)}
+                onChange={(e) => setId(e.target.value)}
             />
-            {parm && <button onClick={onButtonClick}>Search!</button>}
+            {id && <button onClick={onButtonClick}>Search!</button>}
             <button onClick={() => location.reload()}>Clear!</button>
             <Details />
         </div>

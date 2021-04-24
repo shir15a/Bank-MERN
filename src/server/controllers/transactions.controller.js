@@ -11,7 +11,7 @@ const updateCash = async (req, res) => {
         }
         const account = await accountModel.findByIdAndUpdate(accountToUpdate._id, { $inc: { "account.cash": amount } }, { new: true, runValidators: true });
         const trasnaction = new trasnactionModel({
-            to: accountToUpdate._id,
+            to: accountToUpdate.israeliId,
             operation_type: "deposit",
             amount: amount
         });
@@ -37,7 +37,7 @@ const updateCredit = async (req, res) => {
         const account = await accountModel.findByIdAndUpdate(accountToUpdate._id, { $inc: { "account.credit": amount } }, { new: true, runValidators: true });
 
         const trasnaction = new trasnactionModel({
-            to: accountToUpdate._id,
+            to: accountToUpdate.israeliId,
             operation_type: "update credit",
             amount: amount
         });
@@ -103,9 +103,11 @@ const transferMoney = async (req, res) => {
         const trasnaction = new trasnactionModel({
             from: fromUserA.israeliId,
             to: toUserA.israeliId,
-            operation_type: "transfer between acounts",
+            operation_type: "transfer between accounts",
             amount: amount
         });
+
+        console.log(trasnaction, 'trasnaction');
 
         trasnaction.save((err) => {
             if (err) {
@@ -119,9 +121,22 @@ const transferMoney = async (req, res) => {
     }
 };
 
+const userTransactions = async (req, res) => {
+    const { id } = req.params;
+    try {
+        let transactions = await trasnactionModel.find({ to: id })
+        if (transactions) return res.status(200).send(transactions)
+    }
+    catch (error) {
+        return res.status(404).send(error)
+    }
+};
+
+
 module.exports = {
     transfer: transferMoney,
     deposit: updateCash,
     updateCredit: updateCredit,
-    withdraw: withdrawMoney
+    withdraw: withdrawMoney,
+    transactions: userTransactions
 };

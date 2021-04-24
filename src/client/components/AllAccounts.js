@@ -19,7 +19,7 @@ function getAllUsers() {
     <div className="App">
       {data.map((user, index) => {
         return (
-          <div style={{ border: '1px solid black', marginTop: '3px', marginLeft: '3px', width: '200px' }} key={user.id} key={user._id}>
+          <div style={{ border: '1px solid black', marginTop: '3px', marginLeft: '3px', width: '200px' }} key={user._id}>
             <p><b>User: {index + 1}</b></p>
             <p>Name: {user.name}</p>
             <p>Id: {user.israeliId}</p>

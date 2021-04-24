@@ -3,6 +3,9 @@ const router = express.Router();
 const accountControler = require("../controllers/transactions.controller");
 
 router
+  .get("/:id", (req, res) => {
+    accountControler.transactions(req, res);
+  })
   .put("/transfer/:fromAccount/:toAccount", (req, res) => {
     accountControler.transfer(req, res);
   })

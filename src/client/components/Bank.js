@@ -9,6 +9,7 @@ import Withdraw from './Withdraw'
 import UpdateCredit from './UpdateCredit'
 import TransferMoney from './TransferMoney'
 import Create from './CreateAccount'
+import TrasnactionById from './TrasnactionById'
 
 
 export default class Bank extends Component {
@@ -26,7 +27,7 @@ export default class Bank extends Component {
                         <Route path="/UpdateCredit" exact component={UpdateCredit} />
                         <Route path="/TransferMoney" exact component={TransferMoney} />
                         <Route path="/create" exact component={Create} />
-
+                        <Route path="/TrasnactionById" exact component={TrasnactionById} />
                     </Switch>
                 </div>
             </BrowserRouter>
